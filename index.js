@@ -9,7 +9,7 @@ const app = express()
 // app.use(express.static(__dirname + '/public'))
 
 
-async function getFollowers(code, response) {
+async function getFollowers(code, apiResponse) {
 	var formData = new FormData();
 
     formData.append("client_id", process.env.CLIENT_ID);
@@ -36,7 +36,7 @@ async function getFollowers(code, response) {
     let result2 = await response2.json();
     console.log(result);
 
-    response.sendFile(path.resolve(__dirname, '', 'auth.html'))
+    apiResponse.sendFile(path.resolve(__dirname, '', 'auth.html'))
 }
 
 // handle every other route with index.html, which will contain
