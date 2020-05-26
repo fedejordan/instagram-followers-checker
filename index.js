@@ -13,6 +13,8 @@ app.get('/', function (request, response){
 })
 
 app.get('/auth', function (request, response){
+  const code = req.query.code;
+  console.log('code: ' + code)
   response.sendFile(path.resolve(__dirname, '', 'auth.html'))
 })
 
